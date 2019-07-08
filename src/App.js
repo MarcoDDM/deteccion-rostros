@@ -3,6 +3,7 @@ import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import Navigation from './Component/Navigation/Navigation';
 import FaceRecognition from './Component/FaceRecognition/FaceRecognition'; 
+import Logo from './Component/Signin/Signin';
 import Logo from './Component/Logo/Logo';
 import Rank from './Component/Rank/Rank';
 import ImageLinkForm from './Component/ImageLinkForm/ImageLinkForm';
@@ -169,6 +170,7 @@ class App extends Component {
          	params={particlesOptions} 
      		/>
       		<Navigation />
+      		<Signin />
       		<Logo />
       		<Rank />
       		<ImageLinkForm
