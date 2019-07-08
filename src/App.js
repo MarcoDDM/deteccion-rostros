@@ -128,9 +128,15 @@ class App extends Component {
 		super();
 		this.state = {
 			input: '',
-			imageUrl: ''
+			imageUrl: '',
+			box: {}
 		}
 	}
+
+	calculateFaceLocation = (data) => {
+
+	}
+
 	onInputChange = (event) => {
 		this.setState({input: event.target.value});
 	}
@@ -138,15 +144,15 @@ class App extends Component {
 	onButtonSubmit = () => {
 		this.setState({imageUrl: this.state.input})
 		app.models.predict(Clarifai.FACE_DETECT_MODEL,
-    this.state.input)
-.then(function(response) {
-    console.log(response);
-    },
-    function(err) {
+    		this.state.input)
+			.then(function(response) {
+    		this.calculateFaceLocation(response)
+    		},
+    		function(err) {
 
-    }
-);
-	}
+    		}
+		);
+	 }
 
   render() {
   	return (
