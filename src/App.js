@@ -5,6 +5,7 @@ import Navigation from './Component/Navigation/Navigation';
 import FaceRecognition from './Component/FaceRecognition/FaceRecognition'; 
 import Signin from './Component/Signin/Signin';
 import Logo from './Component/Logo/Logo';
+import Register from './Component/Register/Register';
 import Rank from './Component/Rank/Rank';
 import ImageLinkForm from './Component/ImageLinkForm/ImageLinkForm';
 import './App.css';
@@ -175,9 +176,8 @@ class App extends Component {
          	params={particlesOptions} 
      		/>
       		<Navigation onRouteChange={this.onRouteChange} />
-      		{ this.state.route === 'signin'
-      		? <Signin onRouteChange={this.onRouteChange} />
-      		: <div>
+      		{ this.state.route === 'home'
+      		? <div>
       			<Logo />
       		    <Rank />
       		    <ImageLinkForm
@@ -185,9 +185,13 @@ class App extends Component {
       		     onButtonSubmit= {this.onButtonSubmit}
       		      />
       		     <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} />
-      		 
-      		 </div>
-      		}
+      		   </div>
+      		: (
+      			this.state.route === 'signin' 
+      			? <Signin onRouteChange={this.onRouteChange} />
+      			: <Register onRouteChange={this.onRouteChange} />
+      			) 
+      		 }	
     	</div>
   	);
    }  
