@@ -16,7 +16,7 @@
 <ul>
 <li>Node</li>
 <li>Express</li>
-<li>MongoDB</li>
+<li>PostgreSQL</li>
 </ul>
 
 
