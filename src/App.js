@@ -212,7 +212,7 @@ loadUser = (data) => {
     } else if (route === 'home') {
       this.setState({isSignedIn: true})
     }else {
-      this.setState({ route });
+      this.setState({route});
     }
 
   render() {
