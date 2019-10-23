@@ -211,9 +211,10 @@ loadUser = (data) => {
       this.setState(initialState)
     } else if (route === 'home') {
       this.setState({isSignedIn: true})
-    }else {
-      this.setState({route: route});
     }
+    this.setState({route: route});
+  }
+    
 
   render() {
   	const { isSignedIn, imageUrl, route, box } = this.state;
